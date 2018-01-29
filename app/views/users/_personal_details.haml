@@ -3,8 +3,11 @@
     .row
       .form-group.col-lg-6
         = label_tag "height", "Height"
-        = text_field_tag "height_feet", cookies['height_feet'] ? cookies['height_feet'] : "", class: "form-control"
-        = text_field_tag "height_inches", cookies['height_inches'] ? cookies['height_inches'] : "", class: "form-control"
+        .row
+          .col-lg-3
+            = text_field_tag "height_feet", cookies['height_feet'] ? cookies['height_feet'] : "", class: "form-control"
+          .col-lg-3
+            = text_field_tag "height_inches", cookies['height_inches'] ? cookies['height_inches'] : "", class: "form-control"
     .row
       .form-group.col-lg-6
         = label_tag "age", "Age"

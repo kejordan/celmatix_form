@@ -2,4 +2,32 @@
   %header.panel-heading
     .form-group.col-lg-6
       = label_tag "favorite_color", "Favorite Color"
-      = text_field_tag "favorite_color", cookies['favorite_color'] ? cookies['favorite_color'] : "", class: "form-control"
+    #favorite_color_form
+      .row
+        .form-group.col-lg-6
+          = radio_button_tag 'color', 'red', cookies['favorite_color'] == 'red' ? true : false
+          = label_tag "Red", 'red'
+      .row
+        .form-group.col-lg-6
+          = radio_button_tag 'color', 'orange', cookies['favorite_color'] == 'orange' ? true : false
+          = label_tag "Orange", 'orange'
+      .row
+        .form-group.col-lg-6
+          = radio_button_tag 'color', 'yellow', cookies['favorite_color'] == 'yellow' ? true : false
+          = label_tag "Yellow", 'yellow'
+      .row
+        .form-group.col-lg-6
+          = radio_button_tag 'color', 'green', cookies['favorite_color'] == 'green' ? true : false
+          = label_tag "Green", 'green'
+      .row
+        .form-group.col-lg-6
+          = radio_button_tag 'color', 'blue', cookies['favorite_color'] == 'blue' ? true : false
+          = label_tag "Blue", 'blue'
+      .row
+        .form-group.col-lg-6
+          = radio_button_tag 'color', 'purple', cookies['favorite_color'] == 'purple' ? true : false
+          = label_tag "Purple", 'purple'
+      .row
+        .form-group.col-lg-6
+          = label_tag 'other', 'Other'
+          = text_field_tag 'other', cookies['favorite_color'] ? cookies['favorite_color'] : "", class: "form-control"
