@@ -3,13 +3,16 @@
     .row
       .form-group.col-lg-6
         = label_tag "height", "Height"
-        = text_field_tag "feet", "", class: "form-control"
-        = text_field_tag "inches", "", class: "form-control"
+        = text_field_tag "height_feet", cookies['height_feet'] ? cookies['height_feet'] : "", class: "form-control"
+        = text_field_tag "height_inches", cookies['height_inches'] ? cookies['height_inches'] : "", class: "form-control"
     .row
       .form-group.col-lg-6
         = label_tag "age", "Age"
-        = text_field_tag "age", "", class: "form-control"
+        = text_field_tag "age", cookies['age'] ? cookies['age'] : "", class: "form-control"
     .row
       .form-group.col-lg-6
         = label_tag "weight", "Weight"
-        = text_field_tag "weight", "", class: "form-control"
+        = text_field_tag "weight", cookies['weight'] ? cookies['weight'] : "", class: "form-control"
+    .row
+      .form-group.col-lg-6
+        = link_to 'Next', action: :new, current_partial: :favorite_color

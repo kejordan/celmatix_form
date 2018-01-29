@@ -2,4 +2,4 @@
   %header.panel-heading
     .form-group.col-lg-6
       = label_tag "favorite_color", "Favorite Color"
-      = text_field_tag "favorite_color", "", class: "form-control"
+      = text_field_tag "favorite_color", cookies['favorite_color'] ? cookies['favorite_color'] : "", class: "form-control"
