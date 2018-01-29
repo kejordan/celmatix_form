@@ -1,4 +1,12 @@
 -# @TODO - save last partial visited in cookies
--# - partial = cookies.last_partial_loaded
+= javascript_include_tag 'new.js'
+- if params['current_partial']
+  - current_partial = params['current_partial']
+- else
+  - current_partial = 'name'
 = form_tag(controller: :users, action: :create) do
-  = render :partial => 'name', :locals => {user: @user}
+  = render :partial => current_partial, :locals => {user: @user}
+  - if current_partial != 'name'
+    = button_to "Go Back", '#', :onclick => 'history.back(); return false;'
+  - if current_partial ==  'favorite_color'
+    = submit_tag 'Submit', class: 'btn-btn-default'

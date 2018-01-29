@@ -1,6 +1,9 @@
 %section.panel.panel-info
   %header.panel-heading
     .row
-      .form-group.col-lg-6
+      #name_form
         = label_tag "name", "Name"
-        = text_field_tag "name", "", class: "form-control"
+        = text_field_tag "name", cookies['name'] ? cookies['name'] : ""
+    .row
+      #name_next_button
+        = link_to 'Next', action: :new, current_partial: :email
