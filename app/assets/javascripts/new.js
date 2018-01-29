@@ -23,7 +23,7 @@ $(document).on('turbolinks:load', function() {
     document.cookie = 'weight=' + $("#weight").val();
   });
 
-  $('#favorite_color').change(function(){
-    document.cookie = 'favorite_color=' + $("#favorite_color").val();
+  $('#favorite_color_form').change(function(){
+    document.cookie = 'favorite_color=' + $("input[name='color']:checked").val();
   });
 });
