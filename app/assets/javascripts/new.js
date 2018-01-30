@@ -1,6 +1,10 @@
 $(document).on('turbolinks:load', function() {
-  $('#name').change(function(){
-    document.cookie = 'name=' + $("#name").val();
+  $('#first_name').change(function(){
+    document.cookie = 'first_name=' + $("#first_name").val();
+  });
+
+  $('#last_name').change(function(){
+    document.cookie = 'last_name=' + $("#last_name").val();
   });
 
   $('#email').change(function(){

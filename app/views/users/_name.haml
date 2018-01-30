@@ -5,7 +5,8 @@
         = label_tag "name", "Name"
     .row
       .form-group.col-lg-6
-        = text_field_tag "name", cookies['name'] ? cookies['name'] : ""
+        = text_field_tag "first_name", cookies['first_name'] ? cookies['first_name'] : ""
+        = text_field_tag "last_name", cookies['last_name'] ? cookies['last_name'] : ""
     .row
       .form-group.col-lg-6
         #name_next_button
