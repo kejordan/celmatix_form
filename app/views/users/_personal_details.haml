@@ -10,31 +10,33 @@
             = text_field_tag "height_inches", cookies['height_inches'] ? cookies['height_inches'] : "", class: "form-control"
     .row
       .form-group.col-lg-6
-        = label_tag "age", "Age"
-        .row
-          .form-group.col-lg-6
-            = radio_button_tag 'age', '17_or_younger', cookies['age'] == '17_or_younger' ? true : false
-            = label_tag "17 or younger", '17_or_younger'
-        .row
-          .form-group.col-lg-6
-            = radio_button_tag 'age', '18-25', cookies['age'] == '18-25' ? true : false
-            = label_tag "18-25", '18-25'
-        .row
-          .form-group.col-lg-6
-            = radio_button_tag 'age', '26-35', cookies['age'] == '26-35' ? true : false
-            = label_tag "26-35", '26-35'
-        .row
-          .form-group.col-lg-6
-            = radio_button_tag 'age', '36-45', cookies['age'] == '36-45' ? true : false
-            = label_tag "36-45", '36-45'
-        .row
-          .form-group.col-lg-6
-            = radio_button_tag 'age', '45_or_older', cookies['age'] == '45_or_older' ? true : false
-            = label_tag "45 or older", '45_or_older'
+        #age_form
+          = label_tag "age", "Age"
+          .row
+            .form-group.col-lg-6
+              = radio_button_tag 'age', '17_or_younger', cookies['age'] == '17_or_younger' ? true : false
+              = label_tag "17 or younger", '17_or_younger'
+          .row
+            .form-group.col-lg-6
+              = radio_button_tag 'age', '18-25', cookies['age'] == '18-25' ? true : false
+              = label_tag "18-25", '18-25'
+          .row
+            .form-group.col-lg-6
+              = radio_button_tag 'age', '26-35', cookies['age'] == '26-35' ? true : false
+              = label_tag "26-35", '26-35'
+          .row
+            .form-group.col-lg-6
+              = radio_button_tag 'age', '36-45', cookies['age'] == '36-45' ? true : false
+              = label_tag "36-45", '36-45'
+          .row
+            .form-group.col-lg-6
+              = radio_button_tag 'age', '45_or_older', cookies['age'] == '45_or_older' ? true : false
+              = label_tag "45 or older", '45_or_older'
     .row
       .form-group.col-lg-6
         = label_tag "weight", "Weight"
         = text_field_tag "weight", cookies['weight'] ? cookies['weight'] : "", class: "form-control"
     .row
       .form-group.col-lg-6
-        = link_to 'Next', action: :new, current_partial: :favorite_color
+        #personal_details_next_button
+          = link_to 'Next', action: :new, current_partial: :favorite_color

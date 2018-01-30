@@ -6,4 +6,5 @@
         = text_field_tag "email", cookies['email'] ? cookies['email'] : "", class: "form-control"
     .row
       .form-group.col-lg-6
-        = link_to 'Next', action: :new, current_partial: :personal_details
+        #email_next_button
+          = link_to 'Next', action: :new, current_partial: :personal_details
