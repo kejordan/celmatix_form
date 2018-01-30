@@ -6,11 +6,11 @@
   - current_partial = 'name'
 = form_tag(controller: :users, action: :create) do
   = render :partial => current_partial, :locals => {user: @user}
-  - if current_partial != 'name'
-    .row
-      .form-group.col-lg-6
-        = button_to "Go Back", '#', :onclick => 'history.back(); return false;'
   - if current_partial ==  'favorite_color'
     .row
       .form-group.col-lg-6
         = submit_tag 'Submit', class: 'btn-btn-default'
+  - if current_partial != 'name'
+    .row
+      .form-group.col-lg-6
+        = button_to "Go Back", '#', :onclick => 'history.back(); return false;'
