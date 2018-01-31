@@ -10,8 +10,8 @@
             = text_field_tag "height_inches", cookies['height_inches'] ? cookies['height_inches'] : "", class: "form-control"
     .row
       .form-group.col-lg-6
+        = label_tag "age", "Age"
         #age_form
-          = label_tag "age", "Age"
           .row
             .form-group.col-lg-6
               = radio_button_tag 'age', '17_or_younger', cookies['age'] == '17_or_younger' ? true : false
