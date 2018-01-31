@@ -7,3 +7,5 @@ Welcome to Celmatix Form!
   localhost
 
 - To run tests, run Rspec from the project folder
+
+App located in production at https://celmatix-form.herokuapp.com/
