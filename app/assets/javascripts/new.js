@@ -36,7 +36,7 @@ $(document).on('turbolinks:load', function() {
   });
 
   $('#weight').change(function(){
-    if ($("#weight").val() !== "") {
+    if ($("#weight").val() !== "" && !isNaN($("#weight").val())) {
       document.cookie = 'weight=' + $("#weight").val();
     }
   });
@@ -71,6 +71,9 @@ $(document).on('turbolinks:load', function() {
     } else if (isNaN($("#height_inches").val()) || isNaN($("#height_feet").val())) {
       event.preventDefault();
       alert("Height must be a number");
+    } else if ($("#weight").val() !== "" && isNaN($("#weight").val())) {
+      event.preventDefault();
+      alert('Weight must be a number');
     }
   });
 });
