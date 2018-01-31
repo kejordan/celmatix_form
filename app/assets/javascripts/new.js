@@ -44,7 +44,7 @@ $(document).on('turbolinks:load', function() {
   $('#favorite_color_form').change(function(){
     if ($("#other").val() !== "") {
       document.cookie = 'favorite_color=' + $("#other").val();
-    } else if ($("#favorite_color").val() !== "") {
+    } else if ($("input[name='color']:checked").val() !== "") {
       document.cookie = 'favorite_color=' + $("input[name='color']:checked").val();
     }
   });
