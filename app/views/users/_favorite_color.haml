@@ -1,7 +1,10 @@
 %section.panel.panel-info
   %header.panel-heading
     .form-group.col-lg-6
-      = label_tag "favorite_color", "Favorite Color"
+      - flash.each do |key, value|
+        = value
+  .form-group.col-lg-6
+    = label_tag "favorite_color", "Favorite Color"
     #favorite_color_form
       .row
         .form-group.col-lg-6

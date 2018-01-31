@@ -14,6 +14,11 @@ class UsersController < ApplicationController
   # POST /users.json
 
   def create
+    if !cookies['favorite_color']
+      flash[:alert] = 'Please select color before submitting'
+      redirect_back(fallback_location: :new)
+      return
+    end
     user_params = {
       'first_name': cookies['first_name'],
       'last_name': cookies['last_name'],
@@ -26,7 +31,15 @@ class UsersController < ApplicationController
     }
     @user = User.new(user_params)
     if @user.save
-      render :partial => 'finish', notice: 'USER CREATED!'
+      cookies.delete('first_name')
+      cookies.delete('last_name')
+      cookies.delete('email')
+      cookies.delete('age')
+      cookies.delete('weight')
+      cookies.delete('height_feet')
+      cookies.delete('height_inches')
+      cookies.delete('favorite_color')
+      render :partial => 'finish'
     else
       render :new, notice: 'USER NOT CREATED!'
     end
